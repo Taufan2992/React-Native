@@ -4,7 +4,7 @@ import { View, StyleSheet, Text, TouchableOpacity, Image } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios'
 
-export default function Login({navigation}) {
+export default function Waystodo({navigation}) {
     const [isLoading, setIsLoading] = useState(false);
 
     // const handleOnPress = async () => {
@@ -43,7 +43,7 @@ export default function Login({navigation}) {
             <StatusBar />
 
             <Image
-              source={{ uri: '#'}}
+              source={{ uri: 'https://res.cloudinary.com/drlr20stb/image/upload/v1661672915/ReactNative/accept-request_1_vqxwik.png'}}
               style={style.image}
             />
 

@@ -29,7 +29,7 @@ export default function Login({navigation}) {
         
             const body = JSON.stringify(form);
             setIsLoading(true)
-            const response = await axios.post('#', body, config);
+            const response = await axios.post('https://api.kontenbase.com/query/api/v1/5ed379f0-6e47-450d-bbbc-2cb764a9b4fb/auth/login', body, config);
             // console.log(response);
             setIsLoading(false)           
             if (response) {
@@ -39,7 +39,7 @@ export default function Login({navigation}) {
             const value = await AsyncStorage.getItem('token');
             if (value !== null) {
                 console.log(value);
-                navigation.navigate("#")
+                navigation.navigate("List-todo")
             }
                 
         } catch (error) {

@@ -28,7 +28,7 @@ export default function Register({navigation}) {
         
             const body = JSON.stringify(form);
         
-            const response = await axios.post('https://api.kontenbase.com/query/api/v1/d4092d20-bf08-4b97-a40f-d9cce26be7ea/auth/register', body, config);
+            const response = await axios.post('https://api.kontenbase.com/query/api/v1/5ed379f0-6e47-450d-bbbc-2cb764a9b4fb/auth/register', body, config);
             console.log(response);
             
             if (response) {
@@ -38,7 +38,7 @@ export default function Register({navigation}) {
             const value = await AsyncStorage.getItem('token');
             if (value !== null) {
                 console.log(value);
-                navigation.navigate("#")
+                navigation.navigate("Login")
             }
                 
         } catch (error) {
@@ -52,7 +52,7 @@ export default function Register({navigation}) {
             <StatusBar />
 
             <Image
-              source={{ uri: '#'}}
+              source={{ uri: 'https://res.cloudinary.com/drlr20stb/image/upload/v1661655428/ReactNative/Login_Icon_k6srrj.png'}}
               style={style.image}
             />
 
