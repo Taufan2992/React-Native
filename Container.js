@@ -10,7 +10,8 @@ import Register from "./src/Register";
 import Waystodo from "./src/Waystodo"
 import Addlist from "./src/add-list"
 import Addcategory from "./src/add-category"
-import Listtodo from "./src/list-todo"
+import ListTodo from "./src/list-todo"
+import DetailList from "./src/detail-list"
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -25,11 +26,11 @@ function MyTab () {
                     let iconName
 
                     if(route.name == 'List-todo'){
-                        iconName = focused ? 'journal' : 'journal-outline'
+                        iconName = focused ? 'list-circle' : 'list-circle-outline'
                     } else if(route.name == 'Add_list'){
-                        iconName = focused ? 'list' : 'list-outline'
+                        iconName = focused ? 'reader' : 'reader-outline'
                     } else if(route.name == 'Add_category'){
-                        iconName = focused ? 'bookmarks' : 'bookmarks-outline'
+                        iconName = focused ? 'shapes' : 'shapes-outline'
                     }
 
                     return <Ionicons name={iconName} size={20} color='red' />
@@ -39,7 +40,7 @@ function MyTab () {
             })
         }
         >
-            <Tab.Screen name='List-todo' component={Listtodo}/>
+            <Tab.Screen name='List-todo' component={ListTodo}/>
             <Tab.Screen name='Add_list' component={Addlist}/>
             <Tab.Screen name='Add_category' component={Addcategory}/>
         </Tab.Navigator>
@@ -51,10 +52,10 @@ export default function Container(){
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name="Waystodo" component={Waystodo} options={{headerShown: false}} />
-                {/* <Stack.Screen name="DetailList" component={DetailList} options={{headerShown: false}} /> */}
+                <Stack.Screen name="Detail-list" component={DetailList} options={{headerShown: false}} />
                 <Stack.Screen name="Login" component={Login}/>
                 <Stack.Screen name="Register" component={Register}/>
-                <Stack.Screen name="List-todo" component={Listtodo}/>
+                <Stack.Screen name="List-todo" component={MyTab}/>
                 <Stack.Screen name="Add_list" component={Addlist}/>
                 <Stack.Screen name="Add_category" component={Addcategory}/>
             </Stack.Navigator>

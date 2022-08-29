@@ -3,49 +3,8 @@ import React,{useState} from "react";
 import { View, StyleSheet, Text, TextInput, TouchableOpacity} from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios'
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
-
-// const Tab = createBottomTabNavigator();
-
-// function MyTab() {
-//   // Init Theme
-//   const theme = useTheme();
-
-//   return (
-//     <Tab.Navigator
-//       initialRouteName="Hello"
-//       screenOptions={({ route }) => ({
-//         headerMode: "screen",
-//         headerTintColor: "white",
-//         headerStyle: { backgroundColor: theme.colors.primary["300"] },
-//         tabBarIcon: ({ focused, color, size }) => {
-//           let iconName;
-
-//           if (route.name === "Hello") {
-//             iconName = focused ? "ios-home" : "ios-home-outline";
-//           } else if (route.name === "Form") {
-//             iconName = focused
-//               ? "ios-information-circle"
-//               : "ios-information-circle-outline";
-//           }
-
-//           return <Ionicons name={iconName} size={size} color={color} />;
-//         },
-//         tabBarActiveTintColor: theme.colors.primary["800"],
-//         tabBarInactiveTintColor: "gray",
-//       })}
-//     >
-//       <Tab.Screen name="Hello" component={Hello} />
-//       <Tab.Screen name="Form" component={FormNativeBase} />
-//     </Tab.Navigator>
-//   );
-// }
-
 
 export default function Addlist() {
-
-
 
   const [form, setForm] = useState({
     name: '',
@@ -133,7 +92,6 @@ const handleOnPress = async () => {
             <TouchableOpacity style={style.button} onPress={handleOnPress}>
                 <Text style={style.textButton}>Add List</Text>
             </TouchableOpacity>
-
         </View>
     );
 }

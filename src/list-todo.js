@@ -15,7 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Select } from "native-base";
 import { FlatList } from "react-native-gesture-handler";
 
-export default function Listtodo() {
+export default function ListTodo({navigation}) {
   const [form, setForm] = useState({
     name: "",
   });
@@ -25,28 +25,6 @@ export default function Listtodo() {
       ...form,
       [name]: value,
     });
-  };
-
-  const handleOnPress = async () => {
-    try {
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-        },
-      };
-
-      const body = JSON.stringify(form);
-
-      const response = await axios.post("#", body, config);
-      console.log(response);
-
-      if (response) {
-        await AsyncStorage.setItem("token", response.data.token);
-      }
-    } catch (error) {
-      console.log(error);
-      alert(error.response.data.message);
-    }
   };
 
   return (
@@ -117,12 +95,6 @@ export default function Listtodo() {
           <Select.Item label="Done" />
           <Select.Item label="On Progres" />
         </Select>
-        {/* <TextInput 
-                    style={style.textInputView} 
-                    placeholder="Status" 
-                    onChangeText={(value) => handleOnChange('status', value)}
-                    value={form.Name}
-                /> */}
       </View>
 
       <View
@@ -134,7 +106,7 @@ export default function Listtodo() {
         }}
       >
         <View style={{ width: "70%", padding: 10 }}>
-          <Text style={{ fontWeight: "bold" }}>Study-Golang</Text>
+          <Text onPress={() => navigation.navigate("Detail-list")}  style={{ fontWeight: "bold" }}>Study-Golang</Text>
           <Text style={{ color: "grey", marginVertical: 10 }}>
             Learn golang to improve fundamentals and familiarize with coding.
           </Text>

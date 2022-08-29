@@ -6,7 +6,7 @@ import axios from 'axios'
 
 export default function Register({navigation}) {
     const [form, setForm] = useState({
-        firstName: '',
+        name: '',
         email: '',
         password: '',
     });
@@ -64,14 +64,14 @@ export default function Register({navigation}) {
                 <TextInput 
                     style={style.textInput} 
                     placeholder="Name" 
-                    onChangeText={(value) => handleOnChange('firstName', value)}
-                    value={form.firstName}
+                    onChangeText={(value) => handleOnChange('name', value)}
+                    value={form.name}
                 />
             </View>
             <View>
                 <TextInput 
                     style={style.textInput} 
-                    placeholder="email" 
+                    placeholder="Email" 
                     onChangeText={(value) => handleOnChange('email', value)}
                     value={form.email}
                 />
@@ -81,7 +81,7 @@ export default function Register({navigation}) {
                 <TextInput 
                     style={style.textInput} 
                     secureTextEntry={true} 
-                    placeholder="password" 
+                    placeholder="Password" 
                     onChangeText={(value) => handleOnChange('password', value)}
                     value={form.password}
                 />

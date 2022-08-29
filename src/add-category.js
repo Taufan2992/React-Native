@@ -3,9 +3,6 @@ import React,{useState} from "react";
 import { View, StyleSheet, Text, TextInput, TouchableOpacity} from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios'
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
-
 
 export default function Addcategory() {
 
@@ -30,7 +27,7 @@ const handleOnPress = async () => {
   
       const body = JSON.stringify(form);
   
-      const response = await axios.post('#', body, config);
+      const response = await axios.post('https://api.kontenbase.com/query/api/v1/d4092d20-bf08-4b97-a40f-d9cce26be7ea/auth/register', body, config);
       console.log(response);
       
       if (response) {
@@ -65,7 +62,7 @@ const handleOnPress = async () => {
             </TouchableOpacity>
 
             <View>
-                <Text style={style.listCategory}>List Category</Text>
+                <Text style={style.labelText}>List Category</Text>
             </View>
 
           <View style={style.viewButton}>
@@ -152,6 +149,7 @@ const style = StyleSheet.create({
   viewButton: {
     display: "flex",
     flexDirection: "row",
+
   },
   buttonStudy: {
     backgroundColor: '#81C8FF',
